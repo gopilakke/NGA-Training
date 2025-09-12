@@ -2,8 +2,6 @@ package com.company.HibernateORM;
 
 
 
-import java.util.Scanner;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -28,19 +26,12 @@ public class App
 		
 		// To create a  transaction ( Transient + Persistent) -- Transient when you do not to reflect and save in backend  but persistent to save into a backend
 	   Transaction tx = session.beginTransaction();
-	   Student student = null;
-	   Scanner sc = new Scanner(System.in);
-       System.out.println("Enter Student Name :");
-       String name = student.setName(sc.next());
-       System.out.println("Enter Student Email Id :");
-       String emailid =  student.setEmail(sc.next());
-       System.out.println("Enter the Course Name :");
-       String coursename = student.setCourse(sc.next());
-      student = new Student(name,emailid,coursename);
 	   
-		session.persist(student); // we are persisting the data from transient (by default it is transient)
+	   Student s1 = new Student("hibernate","niti@gmail" , "niti");
+	   
+		session.persist(s1); // we are persisting the data from transient (by default it is transient)
 		
-		Student data = session.get(Student.class,student.getId()); // retreiving the data from session
+		Student data = session.get(Student.class,s1.getId()); // retreiving the data from session
 		System.out.println("Data id : " + data); // displaying on a console
 	
 		tx.commit(); // Here it will added finally to the database after committed

@@ -17,13 +17,13 @@ public class Student {
     public void setId(int id) { this.id = id; }
 
     public String getName() { return name; }
-    public String setName(String name) { return this.name = name; }
+    public void setName(String name) { this.name = name; }
 
     public String getEmail() { return email; }
-    public String setEmail(String email) { return this.email = email; }
+    public void setEmail(String email) { this.email = email; }
 
     public String getCourse() { return course; }
-    public String setCourse(String course) { return this.course = course; }
+    public void setCourse(String course) { this.course = course; }
 	public Student(int id, String name, String email, String course) {
 		super();
 		this.id = id;
